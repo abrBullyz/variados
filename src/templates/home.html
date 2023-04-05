@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content_main %}
+<p>{{ my_text }}</p>
+<p>{{ my_number }}</p>
+<p>{{ my_dog }}</p>
+<br>
+<p>{{ my_list }}</p>
+<ul>
+    {% for my_sub in my_list %}
+    {% if my_sub == 123 %}
+    <li>{{ forloop.counter }} -- {{ my_sub|add:100 }} + {{ 20 }}</li>
+    {% elif my_sub == "ABC" %}
+    <li><b>{{ my_sub }}</b></li>
+    {% else %}
+    <li>{{ forloop.counter }} -- {{ my_sub }}</li>
+    {% endif %}
+
+    {% endfor %}
+</ul>
+<h2> USER: {{ request.user }}</h2>
+{% endblock %}
+
+

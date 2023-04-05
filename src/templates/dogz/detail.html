@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content_main %}
+<ul>
+    {% for dog in object %}
+        <li>--{{ dog.pai }}-</li>
+    <li>{{ dog.nome }} - {{ dog.raca }} - {{ dog.obs }} -- {{ dog.site }}</li><a href="#">link >> </a><a href="">link >>></a>
+        <li>--{{ dog.mae }}-</li>
+    <ul>
+        <li>__--__--__--__--__</li>
+    </ul>
+    {% endfor %}
+
+</ul>
+
+{% endblock %}

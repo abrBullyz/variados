@@ -1,0 +1,61 @@
+
+
+{% extends 'base.html' %}
+{% block content_main %}
+
+
+<br> <br>
+<table width="80%" border="0" bgcolor="#0099CC" >
+<form action=""  enctype="multipart/form-data" method="post">
+
+{% csrf_token %}
+        <label> Mes
+ <select  name="id_mes">
+<option value="" >select the month</option>
+<option value="1"  >January</option>
+    <option value="2"  >February</option>
+    <option value="3"  >March</option>
+    <option value="4" >April</option>
+    <option value="5"  >May</option>
+    <option value="6"  >June</option>
+    <option value="7" >July</option>
+    <option value="8" >August</option>
+    <option value="9" >September</option>
+    <option value="10" >October</option>
+      <option value="11" >November</option>
+    <option value="12" >December</option>
+<br>
+</select>
+
+</label> <input type="submit"></form>
+  <tr bgcolor="#eaeaea">
+    <th align="left">Dia</th>
+    <th align="left">Local</th>
+    <th align="left">Tipo</th>
+      <th align="left">obs</th>
+  </tr>
+      {% for dias in object %}
+  <tr bgcolor="#eaeaea">
+      <td>{{ dias.mes }} / {{ dias.dia }} / {{ dias.ano }}</td>
+       <td>{{ dias.local}}</td>
+    <td>{% if  dias.tipo == 1 %} Dia Inteiro {% else %} Meio Dia {% endif %}</td>
+   <td>{{ dias.obs }}</td>
+
+  </tr>
+     <tr>
+
+
+  </tr>
+ {% endfor %}
+</table>
+
+
+
+
+<h1>   <bloquote> TOTAL : {{ total }} </bloquote></h1>
+
+
+
+
+
+{% endblock %}

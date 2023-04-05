@@ -1,0 +1,25 @@
+<!--{% extends 'base.html' %}-->
+<!--{% block content_main %}-->
+<!--<form>-->
+<!--    {{ form.as_P }}-->
+<!--    <input type="submit" value="Save">-->
+
+<!--</form>-->
+
+<!--{% endblock %}-->
+{% extends 'base.html' %}
+{% block content_main %}
+<ul>
+    {% for dogz in object %}
+        <li>--{{ dogz.pai }}-</li>
+    <li>{{ dogz.nome}} - {{ dogz.site }} - {{ dogz.obs }} </li> <a href="#">link >> </a><a href="">link >>></a>
+        <li>--{{ dogz.mae }}-</li>
+
+    <ul>
+        <li>_______-------------_________</li>
+    </ul>
+    {% endfor %}
+
+</ul>
+
+{% endblock %}
